@@ -46,6 +46,12 @@ Correlation: 1:1
 Pub stats: 4,837 msgs/sec ~ 604.70 KB/sec
 ```
 
+###### `Starting benchmark [msgs=100000, msgsize=128, pubs=0, subs=1]`
+
+```
+Sub stats: 263,726 msgs/sec ~ 32.19 MB/sec
+```
+
 ###### `Starting benchmark [msgs=1000000, msgsize=4, pubs=1, subs=0]`
 
 ```
