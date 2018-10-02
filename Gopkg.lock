@@ -13,6 +13,18 @@
   version = "v1.5.0"
 
 [[projects]]
+  digest = "1:bfc758d5a03d57d97226fac6934551c01bd76612adb119c177395b057a0a46db"
+  name = "github.com/gogo/protobuf"
+  packages = [
+    "gogoproto",
+    "proto",
+    "protoc-gen-gogo/descriptor",
+  ]
+  pruneopts = "UT"
+  revision = "636bf0302bc95575d69441b25a2603156ffdddf1"
+  version = "v1.1.1"
+
+[[projects]]
   branch = "master"
   digest = "1:f44d34fda864bed6d6c71514cd40b2ee097e6e67f745d5d014113e1faa5af8b7"
   name = "github.com/konsorten/go-windows-terminal-sequences"
@@ -21,16 +33,28 @@
   revision = "b729f2633dfe35f4d1d8a32385f6685610ce1cb5"
 
 [[projects]]
-  digest = "1:4ce94f3d2074662c04677db471456feb56078244ebcfe3789e6e95901c085bc5"
+  digest = "1:2112e67dddec70b102ab1eb54e14c05baf3be725b5c5147b2a64d0c640a237d7"
   name = "github.com/nats-io/go-nats"
   packages = [
     ".",
+    "bench",
     "encoders/builtin",
     "util",
   ]
   pruneopts = "UT"
   revision = "fb0396ee0bdb8018b0fef30d6d1de798ce99cd05"
   version = "v1.6.0"
+
+[[projects]]
+  digest = "1:cf80370e775e26aa54b8d87304244ad56e19886b422f4ede3bb4aec7ff3f83cc"
+  name = "github.com/nats-io/go-nats-streaming"
+  packages = [
+    ".",
+    "pb",
+  ]
+  pruneopts = "UT"
+  revision = "e15a53f85e4932540600a16b56f6c4f65f58176f"
+  version = "v0.4.0"
 
 [[projects]]
   digest = "1:c3cd663f2f30b92536b9f290ac85c6310dae36a14cb8961553ae9ccf0d85ae41"
@@ -81,6 +105,9 @@
   input-imports = [
     "github.com/bxcodec/faker",
     "github.com/nats-io/go-nats",
+    "github.com/nats-io/go-nats-streaming",
+    "github.com/nats-io/go-nats-streaming/pb",
+    "github.com/nats-io/go-nats/bench",
     "github.com/sirupsen/logrus",
     "github.com/streadway/amqp",
   ]

@@ -2,18 +2,15 @@ package main
 
 import (
 	"flag"
-	"github.com/nats-io/go-nats"
 	"github.com/sirupsen/logrus"
 	"runtime"
+
+	"github.com/nats-io/go-nats"
 )
 
 var (
 	log = logrus.New()
 )
-
-func printMsg(m *nats.Msg, i int) {
-	log.Printf("[#%d] Received on [%s]: '%s'\n", i, m.Subject, string(m.Data))
-}
 
 func main() {
 	var urls = flag.String("s", nats.DefaultURL, "The nats server URLs (separated by comma)")
@@ -24,8 +21,9 @@ func main() {
 	}
 
 	i := 0
-	nc.Subscribe("benchmark", func(msg *nats.Msg) {
-		i += 1
+
+	nc.QueueSubscribe("benchmark", "benchmark-queue", func(msg *nats.Msg) {
+		i++
 		if i%50000 == 0 {
 			log.Info("TEST: ", i)
 		}
