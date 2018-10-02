@@ -41,12 +41,20 @@ Correlation: 1:1
 ### NATS Streaming
 
 ###### `Starting benchmark [msgs=1000000, msgsize=128, pubs=1, subs=0]`
+
+```
 Pub stats: 4,837 msgs/sec ~ 604.70 KB/sec
+```
 
 ###### `Starting benchmark [msgs=1000000, msgsize=4, pubs=1, subs=0]`
+
+```
 Pub stats: 4,970 msgs/sec ~ 19.42 KB/sec
+```
 
 ###### `Starting benchmark [msgs=1000000, msgsize=128, pubs=10, subs=0]`
+
+```
 Pub stats: 19,528 msgs/sec ~ 2.38 MB/sec
  [1] 1,956 msgs/sec ~ 244.51 KB/sec (100000 msgs)
  [2] 1,955 msgs/sec ~ 244.49 KB/sec (100000 msgs)
@@ -59,11 +67,17 @@ Pub stats: 19,528 msgs/sec ~ 2.38 MB/sec
  [9] 1,953 msgs/sec ~ 244.15 KB/sec (100000 msgs)
  [10] 1,952 msgs/sec ~ 244.11 KB/sec (100000 msgs)
  min 1,952 | avg 1,954 | max 1,956 | stddev 1 msgs
+```
 
 ###### `Starting benchmark [msgs=1000000, msgsize=128, pubs=100, subs=0]`
+
+```
 Pub stats: 29,505 msgs/sec ~ 3.60 MB/sec
+```
 
 ###### `Starting benchmark [msgs=1000000, msgsize=128, pubs=10, subs=10]`
+
+```
 NATS Streaming Pub/Sub stats: 143,090 msgs/sec ~ 17.47 MB/sec
  Pub stats: 13,035 msgs/sec ~ 1.59 MB/sec
   [1] 1,345 msgs/sec ~ 168.18 KB/sec (100000 msgs)
@@ -89,6 +103,7 @@ NATS Streaming Pub/Sub stats: 143,090 msgs/sec ~ 17.47 MB/sec
   [9] 38,567 msgs/sec ~ 4.71 MB/sec (1000003 msgs)
   [10] 38,531 msgs/sec ~ 4.70 MB/sec (1000002 msgs)
   min 38,531 | avg 38,826 | max 39,592 | stddev 348 msgs
+```
 
 ##### Props
 
