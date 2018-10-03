@@ -118,3 +118,9 @@ NATS Streaming Pub/Sub stats: 143,090 msgs/sec ~ 17.47 MB/sec
 + Durable
 
 ### NSQ
+
+```
+Publish ~5.000 (1 instance)
+Publish ~35.000 (3 instance)
+Subscribe 30.000+ (1 instance, 10 gourutines)
+```

@@ -26,6 +26,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:4a0c6bb4805508a6287675fac876be2ac1182539ca8a32468d8128882e9d5009"
+  name = "github.com/golang/snappy"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2e65f85255dbc3072edf28d6b5b8efc472979f5a"
+
+[[projects]]
+  branch = "master"
   digest = "1:f44d34fda864bed6d6c71514cd40b2ee097e6e67f745d5d014113e1faa5af8b7"
   name = "github.com/konsorten/go-windows-terminal-sequences"
   packages = ["."]
@@ -63,6 +71,14 @@
   pruneopts = "UT"
   revision = "289cccf02c178dc782430d534e3c1f5b72af807f"
   version = "v1.0.0"
+
+[[projects]]
+  digest = "1:bb48459ec76efe45f13094480296462ef5c9aaa56662918819b7a8fce3155b8b"
+  name = "github.com/nsqio/go-nsq"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "eee57a3ac4174c55924125bb15eeeda8cffb6e6f"
+  version = "v1.0.7"
 
 [[projects]]
   digest = "1:dc2d85c13ac22c22a1f3170a41a8e1b897fa05134aaf533f16df44f66a25b4a1"
@@ -108,6 +124,7 @@
     "github.com/nats-io/go-nats-streaming",
     "github.com/nats-io/go-nats-streaming/pb",
     "github.com/nats-io/go-nats/bench",
+    "github.com/nsqio/go-nsq",
     "github.com/sirupsen/logrus",
     "github.com/streadway/amqp",
   ]
