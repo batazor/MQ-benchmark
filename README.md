@@ -7,9 +7,6 @@ Benchmarks of MQ services for microservice projects
 
 Ping: 15,420/s
 Pong: 15,428/s
-Correlation: 1:1
-
-![amqp](./docs/images/amqp.png)
 
 ##### Props
 
@@ -25,7 +22,6 @@ Correlation: 1:1
 
 Ping: 50,000+/s
 Pong: 50,000+/s
-Correlation: 1:1
 
 ##### Request/Pepley
 
