@@ -12,7 +12,7 @@ import (
 // exchanges means something else is
 // structured improperly.
 type Consumer struct {
-	conn      *amqp.Connection
+	Conn      *amqp.Connection
 	channel   *amqp.Channel
 	queue     amqp.Queue
 	QueueName string

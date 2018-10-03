@@ -33,7 +33,6 @@ func Listen() Consumer {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Info("Run AMQP")
 
 	return *CONSUMER
 }

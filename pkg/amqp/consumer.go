@@ -16,7 +16,7 @@ func NewConsumer(uri, changes, exchangeType, queueName, bindingKey, consumerTag 
 		changes:      changes,
 		bindingKey:   bindingKey,
 		exchangeType: exchangeType,
-		conn:         nil,
+		Conn:         nil,
 		channel:      nil,
 		consumerTag:  consumerTag,
 		done:         make(chan error),
@@ -27,22 +27,22 @@ func NewConsumer(uri, changes, exchangeType, queueName, bindingKey, consumerTag 
 func (c *Consumer) Connect() error {
 	var err error
 
-	c.conn, err = amqp.Dial(c.uri)
+	c.Conn, err = amqp.Dial(c.uri)
 	if err != nil {
 		return errors.New("Failed to connect to RabbitMQ: " + err.Error())
 	}
 
-	c.conn.Config.ChannelMax = 300
+	c.Conn.Config.ChannelMax = 300
 
 	go func() {
 		// Waits here for the channel to be closed
-		log.Info("Notify close: ", <-c.conn.NotifyClose(make(chan *amqp.Error)))
+		log.Info("Notify close: ", <-c.Conn.NotifyClose(make(chan *amqp.Error)))
 
 		// Let Handle know it's not time to reconnect
 		c.done <- errors.New("Channel Closed")
 	}()
 
-	c.channel, err = c.conn.Channel()
+	c.channel, err = c.Conn.Channel()
 	if err != nil {
 		return errors.New("Failed to open a channel: " + err.Error())
 	}
@@ -186,7 +186,7 @@ func (c *Consumer) Shutdown() error {
 		return err
 	}
 
-	if err := c.conn.Close(); err != nil {
+	if err := c.Conn.Close(); err != nil {
 		log.Error("AMQP connection close error", err)
 		return err
 	}

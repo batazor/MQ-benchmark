@@ -124,3 +124,52 @@ Publish ~5.000 (1 instance)
 Publish ~35.000 (3 instance)
 Subscribe 30.000+ (1 instance, 10 gourutines)
 ```
+
+###### Official
+
+```
+# using --mem-queue-size=1000000 --data-path= --size=200 --batch-size=200
+PUB: [bench_writer] 2018/10/03 17:30:50 duration: 10.142364618s - 4.664mb/s - 24451.892ops/s - 40.897us/op
+SUB: [bench_reader] 2018/10/03 17:31:00 duration: 10.078608328s - 4.693mb/s - 24606.572ops/s - 40.640us/op
+```
+
+```
+# using --mem-queue-size=1000000 --data-path= --size=4 --batch-size=200
+PUB: [bench_writer] 2018/10/03 17:34:35 duration: 10.004104975s - 0.134mb/s - 35245.532ops/s - 28.372us/op
+SUB: [bench_reader] 2018/10/03 17:34:45 duration: 10.044196769s - 0.134mb/s - 35120.081ops/s - 28.474us/op
+```
+
+### gRPC
+
+```
+./run_bench.sh -c 1 -req 4
+qps: 5920.2
+Latency: (50/90/99 %ile): 163.26µs/194.137µs/284.877µs
+Client CPU utilization: 17.196106652s
+Server CPU utilization: 19.055712769s
+```
+
+```
+./run_bench.sh -c 10 -req 4
+qps: 28674.7
+Latency: (50/90/99 %ile): 289.996µs/468.852µs/1.511479ms
+Client CPU utilization: 32.523916725s
+Server CPU utilization: 36.774488391s
+```
+
+```
+./run_bench.sh -c 10 -req 200
+qps: 25125.1
+Latency: (50/90/99 %ile): 317.85µs/566.331µs/1.946365ms
+Client CPU utilization: 30.203881793s
+Client Mem Profile: /tmp/client_r_1_c_10_req_200_resp_1_unary_1538578093.mem
+Server CPU utilization: 34.315704453s
+```
+
+```
+./run_bench.sh -c 10 -req 200 -rpc_type streaming
+qps: 63071.5
+Latency: (50/90/99 %ile): 132.782µs/214.27µs/628.471µs
+Client CPU utilization: 35.75503333s
+Server CPU utilization: 34.555893605s
+```
