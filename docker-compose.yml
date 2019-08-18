@@ -21,7 +21,7 @@ services:
 #    - "6222:6222"
 
   nats-streaming-server:
-    image: nats-streaming:0.15.1-linux
+    image: nats-streaming:0.16.0-linux
     container_name: nats-streaming-server
     ports:
     - "4222:4222"
